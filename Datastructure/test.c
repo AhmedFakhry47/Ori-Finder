@@ -24,12 +24,12 @@ void main(void){
 	Dinsert(mydict,"BAmed",3);
 	Dinsert(mydict,"BB",1);
 
-	unsigned char value = Dsearch(mydict,"NOHA");
-	printf("%d\n",value);
+	int pos = Dsearch(mydict,"NOHA");
+	printf("%d\n",mydict->Table[pos].value);
 	
 	Ddelete(mydict,"Soha");
 
-	value = Dsearch(mydict,"Soha");
-	printf("%d\n",value);
+	pos = Dsearch(mydict,"Soha");
+	printf("%d\n",mydict->Table[pos].value);
 	return;
 }	

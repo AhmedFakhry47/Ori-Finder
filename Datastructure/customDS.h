@@ -8,6 +8,6 @@ Dict DictCreate(unsigned int size);
 void DictGrow(Dict oriP);
 unsigned int hash(const char *key, unsigned int length);
 void Dinsert(Dict diH,const char *key,unsigned char value);
-unsigned char Dsearch(Dict diH, const char *key);
+int Dsearch(Dict diH, const char *key);
 void Ddelete(Dict diH, const char *key);
 #endif

@@ -38,5 +38,6 @@ void main(void){
 	unsigned char freq = find_freq(genome,kmer);
 	printf("The kmer '%s' is repeated number of %d times \n",kmer,freq);
 
-	
+	unsigned char highest = highest_freq(genome, 2);
+	printf("The highest freq of kmer length %d is %d  \n",2,highest);
 }	
