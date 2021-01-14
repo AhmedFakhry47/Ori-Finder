@@ -83,9 +83,10 @@ void Dinsert(Dict diH,const char *key,unsigned char value){
 unsigned char Dsearch(Dict diH, const char *key){
 
 	unsigned int position = hash(key, diH->size);
-	unsigned char *Okey   = diH->Table[position].key;
+	const char *Okey   = diH->Table[position].key;
 
-	if (!strcmp(Okey,"")){
+	printf("%s\n", Okey );
+	if (!strcmp(Okey,"\0")){
 		printf("No such key ! \n");
 		return 0;
 	}
@@ -97,9 +98,9 @@ unsigned char Dsearch(Dict diH, const char *key){
 void Ddelete(Dict diH, const char *key){
 
 	unsigned int position = hash(key, diH->size);
-	unsigned char *Okey   = diH->Table[position].key;
+	const char *Okey   = diH->Table[position].key;
 
-	if (strcmp(Okey,"")){
+	if (strcmp(Okey,"\0")){
 		diH->Table[position].key   = "";
 		diH->Table[position].value = 0;
 	}
