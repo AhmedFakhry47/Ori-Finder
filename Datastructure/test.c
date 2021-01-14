@@ -17,9 +17,15 @@ struct dict{
 void main(void){
 	Dict mydict;
 
-	mydict = DictCreate(2);
+	mydict = DictCreate(5);
 	const char *key = "hey";
-	insert(mydict,key,4);
 	
+	Dinsert(mydict,"Soha",4);
+	Dinsert(mydict,"BAmed",3);
+	Dinsert(mydict,"BB",1);
+
+	unsigned char value = Dsearch(mydict, "");
+
+	printf("%d\n",value);
 	return;
 }	

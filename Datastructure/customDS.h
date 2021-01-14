@@ -7,6 +7,8 @@ typedef struct Item Item;
 Dict DictCreate(unsigned int size);
 void DictGrow(Dict oriP);
 unsigned int hash(const char *key, unsigned int length);
-void insert(Dict diH,const char *key,unsigned char value);
-	
+void Dinsert(Dict diH,const char *key,unsigned char value);
+unsigned char Dsearch(Dict diH, const char *key);
+void Ddelete(Dict diH, const char *key);
+
 #endif

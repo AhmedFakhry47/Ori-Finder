@@ -68,7 +68,7 @@ unsigned int hash(const char *key, unsigned int length){
 	
 }
 
-void insert(Dict diH,const char *key,unsigned char value){
+void Dinsert(Dict diH,const char *key,unsigned char value){
 
 	unsigned int position = hash(key,diH->size);
 	diH->Table[position].value = value;
@@ -80,3 +80,32 @@ void insert(Dict diH,const char *key,unsigned char value){
 	return;
 }
 
+unsigned char Dsearch(Dict diH, const char *key){
+
+	unsigned int position = hash(key, diH->size);
+	unsigned char *Okey   = diH->Table[position].key;
+
+	if (!strcmp(Okey,"")){
+		printf("No such key ! \n");
+		return 0;
+	}
+
+	unsigned char value   = diH->Table[position].value;
+	return value;
+}
+
+void Ddelete(Dict diH, const char *key){
+
+	unsigned int position = hash(key, diH->size);
+	unsigned char *Okey   = diH->Table[position].key;
+
+	if (strcmp(Okey,"")){
+		diH->Table[position].key   = "";
+		diH->Table[position].value = 0;
+	}
+	else{
+		printf("No such key !\n");
+		return;
+	}
+	return;
+}
